@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michael Thole</title>
+  <meta name="description" content="Personal card">
+  <meta name="color-scheme" content="light only">
+  <link rel="canonical" href="https://mthole.me/">
+  <meta property="og:site_name" content="Michael Thole">
+  <meta property="og:title" content="Michael Thole">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Personal card">
+  <meta property="og:url" content="https://mthole.me/">
+  <meta property="og:image" content="https://mthole.me/assets/card.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <style>
+    :root {
+      --card: #242529;
+      --text: rgba(255, 255, 255, 0.69);
+      --pad-page: 5rem;
+      --pad-y: 6rem;
+      --pad-x: 4rem;
+      --gap-image: 2.25rem;
+      --gap-title: 2rem;
+      --gap-rule: 5rem;
+      --icon-spacing: 1.375rem;
+      --title-size: 4.375em;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { font-size: 14pt; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--pad-page);
+      background: #e6e6e6;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fixed layer so the photo doesn't stretch with page height on phones. */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(45deg, rgba(37, 21, 69, 0.145) 21%, rgba(212, 72, 107, 0.145) 62%, rgba(126, 37, 119, 0.145) 100%),
+        url('assets/bg.jpg') center / cover no-repeat;
+    }
+
+    main {
+      width: 30rem;
+      max-width: 100%;
+      padding: var(--pad-y) var(--pad-x);
+      background: var(--card);
+      border-radius: 1.875rem;
+      box-shadow: 0 0 5.875rem 2.125rem rgba(0, 0, 0, 0.2);
+      text-align: center;
+      animation: rise 1s ease both;
+    }
+
+    .avatar {
+      display: block;
+      width: 7.75rem;
+      height: auto;
+      aspect-ratio: 1;
+      margin: 0 auto var(--gap-image);
+      border: 8px solid #9e9e9e;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0 0 var(--gap-title);
+      font-size: var(--title-size);
+      font-weight: 600;
+      line-height: 1;
+      color: #fff;
+      background: linear-gradient(30deg, #7a7a7a 0%, #fff 73%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      margin: 0;
+      color: var(--text);
+      line-height: 1.875;
+    }
+
+    strong { font-weight: 600; }
+
+    hr {
+      margin: var(--gap-rule) calc(var(--pad-x) * -1);
+      border: 0;
+      border-top: 2px dashed rgba(255, 255, 255, 0.051);
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--icon-spacing);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 2.25em;
+    }
+
+    ul a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      background: #fff linear-gradient(30deg, #adadad 0%, rgba(255, 255, 255, 0.008) 100%);
+      transition: transform 0.25s ease;
+    }
+
+    ul a:hover,
+    ul a:focus-visible { transform: scale(1.1125); }
+
+    ul svg {
+      width: 60%;
+      height: 60%;
+      fill: rgba(36, 37, 41, 0.62);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(0.375rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+      ul a { transition: none; }
+    }
+
+    @media (max-width: 1280px) {
+      :root { --pad-page: 3.5rem; }
+    }
+
+    @media (max-width: 980px) {
+      html { font-size: 12pt; }
+      :root { --pad-y: 3.5rem; --pad-x: 2rem; }
+    }
+
+    @media (max-width: 736px) {
+      html { font-size: 11pt; }
+      :root {
+        --gap-image: 1.6875rem;
+        --gap-title: 1.5rem;
+        --gap-rule: 3.5rem;
+        --title-size: 3.5em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root { --pad-page: 2.25rem; --icon-spacing: 1.03125rem; }
+    }
+
+    @media (max-width: 360px) {
+      :root { --pad-page: 2.0625rem; --pad-y: 2.625rem; --pad-x: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="avatar" src="assets/avatar.jpg" width="465" height="465" alt="Photo of Michael Thole">
+    <h1>Hello!</h1>
+    <p>I'm <strong>Michael Thole</strong>, welcome to my placeholder page on the Internet. I'm a human usually located in Portland, Oregon and am happy to connect via any of the links below.</p>
+    <hr>
+    <ul>
+      <li><a href="https://bsky.app/profile/mthole.me" rel="me" aria-label="Bluesky"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2c42.1-31.6 110.3-56 110.3 21.8c0 15.5-8.9 130.5-14.1 149.2C478.2 298 412 314.6 353.1 304.5c102.9 17.5 129.1 75.5 72.5 133.5c-107.4 110.2-154.3-27.6-166.3-62.9l0 0c-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8l0 0c-12 35.3-59 173.1-166.3 62.9c-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1C10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg></a></li>
+      <li><a href="https://pdx.social/@mthole" rel="me" aria-label="Mastodon"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/mthole/" rel="me" aria-label="LinkedIn"><svg viewBox="0 0 448 512" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></a></li>
+      <li><a href="https://github.com/mthole" rel="me" aria-label="GitHub"><svg viewBox="0 0 496 512" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a></li>
+      <li><a id="email" href="#" aria-label="Email"><svg viewBox="0 0 512 512" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></a></li>
+    </ul>
+  </main>
+  <script>
+    // Assemble the address at runtime so it isn't sitting in the HTML for scrapers.
+    document.getElementById('email').href = 'mailto:' + ['mthole', 'gmail.com'].join('@');
+  </script>
+  <!-- Icons: Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com/license/free (CC BY 4.0) -->
+</body>
+</html>
